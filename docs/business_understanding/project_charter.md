@@ -136,7 +136,25 @@ Esta metodología nos permitirá desarrollar un modelo de aprendizaje automátic
 
 ## Presupuesto
 
-[Descripción del presupuesto asignado al proyecto]
+El proyecto cuenta con el siguiente desglose presupuestario:
+
+| Concepto                 | Costo Estimado (COP) | Detalles                                                                                   |
+|--------------------------|----------------------|-------------------------------------------------------------------------------------------|
+| **Recursos Humanos**     | $1,000,000          | Incluye la dedicación de los integrantes del equipo en la implementación del proyecto.     |
+|                          |                     |           |
+| **Infraestructura**      | $100,000            | Acceso a servicios gratuitos como Google Colab y herramientas académicas proporcionadas,  |
+|                          |                     | más el uso de equipos personales para el desarrollo.                                      |
+| **Materiales**           | $50,000             | Incluye materiales impresos o digitales, como guías, artículos de investigación,          |
+|                          |                     | libros de referencia, entre otros, necesarios para cumplir con los objetivos del proyecto.|
+| **Imprevistos**          | $100,000            | Gastos no previstos, como transporte, copias físicas, fallos en equipo personal,          |
+|                          |                     | o costos menores en la adquisición de insumos o servicios adicionales.                   |
+
+**Total Estimado:** $1,250,000 COP
+
+### Notas:
+- El uso de herramientas como Google Colab asegura la reducción de costos significativos al no requerir inversiones en infraestructura en la nube.
+- Este presupuesto puede variar según la disponibilidad de recursos y cambios en el alcance del proyecto.
+
 
 ## Stakeholders
 
