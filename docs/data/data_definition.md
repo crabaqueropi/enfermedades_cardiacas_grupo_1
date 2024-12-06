@@ -2,24 +2,33 @@
 
 ## Origen de los datos
 
-- [ ] Especificar la fuente de los datos y la forma en que se obtuvieron. 
+- Los datos provienen de la base de datos pública disponible en [Kaggle: Personal Key Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease).
+- Estos datos han sido descargados y almacenados en Google Drive para facilitar su acceso y uso colaborativo.
 
 ## Especificación de los scripts para la carga de datos
 
-- [ ] Especificar los scripts utilizados para la carga de los datos. 
+- Los scripts utilizados para la carga de datos se encuentran en la carpeta `scripts` del proyecto.
 
-## Referencias a rutas o bases de datos origen y destino
-
-- [ ] Especificar las rutas o bases de datos de origen y destino para los datos.
 
 ### Rutas de origen de datos
 
-- [ ] Especificar la ubicación de los archivos de origen de los datos.
-- [ ] Especificar la estructura de los archivos de origen de los datos.
-- [ ] Describir los procedimientos de transformación y limpieza de los datos.
+- **Ubicación de los archivos de origen:**  
+  Los datos se encuentran almacenados en Google Drive y se pueden acceder directamente a través de un enlace compartido o mediante el sistema de control de datos **DVC (Data Version Control)**.
+ 
+  - Nombre del archivo: `heart_2020_cleaned.csv`
 
-### Base de datos de destino
+- **Estructura de los archivos de origen:**  
+  - Formato: CSV delimitado por comas (`,`).
+  - Número de filas: 319,795  
+  - Número de columnas: 18  
 
-- [ ] Especificar la base de datos de destino para los datos.
-- [ ] Especificar la estructura de la base de datos de destino.
-- [ ] Describir los procedimientos de carga y transformación de los datos en la base de datos de destino.
+- **Acceso con DVC:**  
+  - DVC está configurado para rastrear la versión de los datos. Los datos pueden descargarse mediante:
+    ```bash
+    dvc pull
+    ```
+
+- **Procedimientos de transformación y limpieza de los datos:**  
+  - Eliminación de filas duplicadas.
+  - Estandarización de etiquetas en variables categóricas.
+  - Conversión de tipos de datos según sea necesario.
