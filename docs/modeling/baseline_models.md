@@ -52,25 +52,12 @@ AUC-ROC: Área bajo la curva ROC, que mide la capacidad del modelo para distingu
 
 ## Resultados de evaluación
 
-Métrica
-
-Valor
-
-Precisión
-
-0.78
-
-Sensibilidad
-
-0.85
-
-Especificidad
-
-0.72
-
-AUC-ROC
-
-0.81
+| Métrica  | Valor |
+| ------------- | ------------- |
+| Precisión  | 0.78  |
+| Sensibilidad  | 0.85  |
+| Especificidad  | 0.72  |
+| AUC-ROC  | 0.81  |
 
 Los resultados muestran un desempeño inicial prometedor para el modelo baseline, con un balance razonable entre sensibilidad y especificidad.
 
