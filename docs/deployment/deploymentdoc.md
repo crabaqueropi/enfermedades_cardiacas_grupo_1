@@ -36,7 +36,9 @@ Python 3.10.12
 - **Requisitos de seguridad:** No aplica
   
 - **Diagrama de arquitectura:**
-  
+
+  ![POST](https://github.com/user-attachments/assets/3ea2f9ee-f608-4bdd-9a8c-f50f3bf73684)
+
 
 ## Código de despliegue
 
