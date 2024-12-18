@@ -54,6 +54,63 @@ Python 3.10.12
 ## Documentación del despliegue
 
 - **Instrucciones de instalación:** (instrucciones detalladas para instalar el modelo en la plataforma de despliegue)
+  ### Requisitos Previos
+
+  1. Crear un entorno virtual:
+
+     python -m venv venv
+     source venv/bin/activate  # Windows: .\venv\Scripts\activate
+  
+  2. Instalar las dependencias necesarias:
+
+     pip install mlflow joblib dvc_gdrive pyngrok pandas sklearn-pandas requests
+
+  3. Configurar las variables de entorno:
+     import os
+     os.environ["DRIVEID"] = "<drive_id_para_dvc>"
+     os.environ["GDRIVE_CREDENTIALS_DATA"] = "<contenido_de_credentials.json>"
+     os.environ["NGROK_TOKEN"] = "<tu_ngrok_token>"
+     
 - **Instrucciones de configuración:** (instrucciones detalladas para configurar el modelo en la plataforma de despliegue)
+  ### Exportación del Modelo
+  Guardar el modelo entrenado en un archivo que permita su despliegue:
+
+    import joblib
+    model = RandomForestClassifier(n_estimators=100)
+    model.fit(X_train, y_train)
+    joblib.dump(model, "model.pkl")
+
 - **Instrucciones de uso:** (instrucciones detalladas para utilizar el modelo en la plataforma de despliegue)
+  ### Despliegue Local con MLFlow
+  Usar MLFlow para servir el modelo:
+
+      mlflow models serve -m "path/to/model" --port 5000
+
+  Probar la API REST:
+
+      curl -X POST -H "Content-Type: application/json" \
+           -d '{"data": [[1, 2, 3]]}' http://127.0.0.1:5000/invocations
+
+  ### Exposición del Servicio con Ngrok
+  Instalar Ngrok:
+
+      pip install pyngrok
+
+  Configurar tu token de Ngrok:
+
+      ngrok config add-authtoken <tu_ngrok_token>
+
+  Iniciar un túnel hacia el puerto del servidor:
+
+      ngrok http 5000
+
+  Usar la URL generada por Ngrok para acceder al modelo desde cualquier ubicación.
 - **Instrucciones de mantenimiento:** (instrucciones detalladas para mantener el modelo en la plataforma de despliegue)
+  ### Actualización del Modelo
+  1. Exportar un nuevo modelo entrenado.
+  2. Reemplazar el archivo del modelo en el directorio de despliegue.
+  3. Reiniciar el servidor MLFlow:
+      mlflow models serve -m "path/to/updated_model" --port 5000
+  ### Monitoreo
+  Usar los registros de MLFlow para revisar solicitudes y errores:
+      mlflow ui
